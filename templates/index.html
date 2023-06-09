@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <div class="container">
+    <div class=" w-100 mt-4">
+        <div class="row">
+            <h4 class="d-block">Bu yerda o'rganishingiz uchun qilingan loyihalarni topishingiz mumkin</h4>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between">
+            {% for i in projects %}
+            <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
+                <img height="200" class=" card-img-top" src="{{i.image.url}}" alt="">
+                <div class="card-body">
+                    <h6 class="align-center card-title">{{i.title}}</h6>
+                    <div class="buttons d-flex flex-wrap justify-content-between ">
+                        <a href="/">🗳️</a>
+                        <a href="{% url 'projects:detail' i.id %}" class="btn btn-outline-primary" >Ko'rish</a>
+                    </div>
+                </div>
+            </div>  
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}

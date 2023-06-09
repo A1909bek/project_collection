@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h4><strong>{{project.title}}</strong></h4>
+            <h5>{{project.description}}</h5>
+            <h5>Muallif:{{project.author}}</h5>
+            <img src="{{project.image.url}}" width="200" height="200" >
+            {% if project.file %}
+            <p>Download: <a href="{{ project.file.url }}">{{project.title}}📩</a></p>
+            {% endif %}
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{% endblock content %}
